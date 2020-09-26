@@ -1,14 +1,16 @@
 package javapractice;
 
-public class EmployeeWageBuilderUC4 {
+public class EmployeeWageBuilderUC5 {
 	public static final  int IS_PART_TIME=1;
 	public static final  int IS_FULL_TIME=2;
 	public static final   int EMP_RATE_PER_HOUR=20;
-
-	public static void main(String[] args) {
+    public static final int NUM_OF_WORKING_DAYS=20;
+    public static void main(String[] args) {
 	     
 	     int empHrs=0;
 	     int empWage=0;
+	     int totalEmpWage=0;
+	     for(int day=0;day<NUM_OF_WORKING_DAYS;day++) {
 	 	int empCheck=(int )Math.floor(Math.random()*10)%3;
 	   switch(empCheck) {
 	   case  IS_PART_TIME:
@@ -23,7 +25,10 @@ public class EmployeeWageBuilderUC4 {
 	   }
 	   
 	   empWage=empHrs*EMP_RATE_PER_HOUR;
-		System.out.print("Employee wage is "+ empWage);
+	   totalEmpWage+=empWage;
+		System.out.println("Employee wage is "+ empWage);
+    }
+		System.out.println("Total Employee wage is "+ totalEmpWage);
 
 	}
 }
